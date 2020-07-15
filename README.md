@@ -4,4 +4,4 @@
 ***
 前端学习，演示地址  
 https://gip886.github.io/HTML/HTML学习/放大镜.html  
-https://gip886.github.io/HTML/HTML学习/小米轮播图.html
+https://gip886.github.io/HTML/HTML学习/小米轮播.html
