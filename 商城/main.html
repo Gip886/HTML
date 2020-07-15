@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>俊俊商城的首页</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				font: 14px "microsoft yahei", Arial, Helvetica, sans-serif;
+				color: #333;
+				background-color: #f5f5f5;
+				
+			}
+			#menu{
+				width: 1900px;
+				background-color: white;
+				position: relative;
+				box-shadow: 2px 2px 10px 10px #e5e6e7;
+			}
+			#menu ul{
+				list-style: none;
+				text-align: center;
+			}
+			#menu ul li{
+				display: inline-block;
+				font-size: 36px;
+				padding: 30px;
+			}
+			#menu ul li a{
+				text-decoration: none;
+				color: black;
+			}
+			#search{
+				position: absolute;
+				right: 50px;
+				top: 50px;
+			}
+			#search input,button{
+				height: 40px;
+			} 
+			#search button{
+				width: 40px;
+			}
+			#Logo{
+				position: absolute;
+				left: 30px;
+				top: 0px;
+			}
+
+			.rt {
+				/* float: right; */
+				font-size: 16px;
+				background-color: #008B8B;
+				position: absolute;
+				top: 0px;
+				right: 10px;
+			}
+			
+
+
+
+
+			
+
+		
+			#main {
+				height: 1000px;
+				width: 1900px;
+				position: relative;
+			}
+
+			#nav {
+				left: 80px;
+				/* top: 50px; */
+				position: absolute;
+				
+			}
+			#nav ul{
+				width: 240px;
+				
+			}
+			#nav ul li {
+				background-color: gray;
+				width: 230px;
+				padding-left: 10px;
+				height: 50px;
+				line-height: 50px;
+				font-size: 18px;
+				color: white;
+				font-size: 20px;
+				width: 240px;
+			}
+			#popup{
+				/* width: 600px; */
+				width: 0px;
+				height: 500px;
+				position: absolute;
+				/* right: -610px; */
+				left: 250px;
+				top: 0px;
+				background-color: white;
+				opacity: 80%;
+				z-index:1;
+				/* display: none; */
+				color: #000000;
+				transition: width 2s;
+				visibility: hidden;
+				overflow: hidden;
+				white-space: nowrap;
+			}
+			#nav li:hover {
+				background-color: orangered;
+			}
+			#nav li:hover #popup {
+				/* display: block; */
+				width: 600px;
+				 visibility: visible;
+			}
+
+			#nav li img {
+				float: right;
+				margin: auto;
+				margin-top: 10px;
+			}
+
+			#player {
+				background-color: #008B8B;
+				height: 300px;
+				width: 699px;
+				position: relative;
+				left: 600px;
+				overflow: hidden;
+			}
+
+			#main .sroll img {
+				float: left;
+			}
+
+			.sroll {
+				position: absolute;
+				animation: abc 10s linear 2s infinite alternate;
+				width: 4000px;
+			}
+
+			@keyframes abc {
+				from {
+					left: 0px;
+				}
+
+				to {
+					left: -2100px;
+				}
+			}
+					/* 分割 */
+
+			#product_hardware {
+				width: 1230px;
+				border: 1px solid #F5F5F5;
+				/* position: absolute; */
+				/* left: 380px;
+				top: 10px; */
+				margin-right: auto;
+				margin-left: auto;
+				margin-top: 20px;
+				position: relative;
+				/* overflow: auto; */
+				height: 700px;
+			}
+
+			#product_hardware>a {
+				line-height: 19px;
+			}
+
+
+			#product_hardware>a b {
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				line-height: 15px;
+				border: 1px solid #B0B0B0;
+				border-radius: 50%;
+				background: #B0B0B0;
+				color: #fff;
+				text-align: center;
+				margin-left: 8px;
+				padding: 3px;
+			}
+
+			#product_hardware>a b:hover {
+				background: #FF6700;
+			}
+			#product_hardware a.prHe {
+				float: left;
+				width: 234px;
+				height: 614px;
+				margin-top: 10px;
+			}
+#product_hardware a.prh {
+				float: left;
+				width: 234px;
+				height: 307px;
+				margin-top: 10px;
+			}
+
+			/**右边列表**/
+			#hardware {
+				margin-top: 9px;
+				list-style: none;
+			}
+
+			#hardware li {
+				float: left;
+				width: 236px;
+				height: 300px;
+				margin-left: 13px;
+				background: #fff;
+				text-align: center;
+				margin-bottom: 14px;
+			}
+
+			#hardware li div {
+				margin-bottom: 5px;
+			}
+			
+			#hardware .addshopcar{
+				margin-bottom: 0px;
+				margin-left: auto;
+				margin-right: auto;
+				height: 30px;
+				width:150px;
+				border: 2px solid #ff6700;
+				color: #ff6700;
+				text-align: center;
+				font-size: 16px;
+				line-height: 30px;
+			}
+			#hardware .addshopcar:hover{
+				background-color: #ff6700;
+				color: white;
+			}
+
+			#hardware li h4 {
+				height: 20px;
+				margin: 10px auto;
+			}
+
+			#hardware li span {
+				display: block;
+				color: #FFAC13;
+				margin: 10px;
+			}
+			#hardware li img{
+				height: 142px;
+				width: 156px;
+			}
+
+			#hardware li.no_banner h4 {
+				margin-top: 36px;
+			}
+			/* 购物车 */
+			#main #shopcar{
+				width: 310px;
+				height: 580px;
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				box-shadow: 1px 1px 5px rgba(39,48,57,.05);
+			
+			}
+			#shopcar .top{
+				height: 80px;
+				/* background-color: #2F4F4F; */
+				background-color: white;
+				color: #000000;
+				position: relative;
+			}
+			#shopcar .top h2{
+				position: absolute;
+				top: 0px;
+				left: 100px;
+			}
+			#shopcar .top p{
+				position: absolute;
+				top: 30px;
+				left: 60px;
+			}
+			#shopcar .cart-goods-list{
+				color: #757575;
+				font-size: 12px;
+				/* color: #424242; */
+				line-height: 1;
+				margin-top: 8px;
+				margin-bottom: 8px;
+				font-size: 18px;
+				font-weight: normal;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+				background-color: white;
+				height: 450px;
+				overflow: auto;
+			}
+			#shopcar .cart-goods-list .col{
+				display: inline-block;
+				font-size: 15px;
+				width: 30px;
+				text-align: center;
+				margin-right: 12px;
+				
+			}
+			#shopcar .cart-goods-list .col-name{
+				width: 56px;
+			}
+			#shopcar .cart-goods-list .list-body{
+				margin-top: 20px;
+			}
+			#shopcar .cart-goods-list .buy div{
+				display: inline-block;
+				font-size: 12px;
+				width: 30px;
+				text-align: center;
+				margin-right: 12px;
+			}
+			#shopcar .cart-goods-list .buy .buyname{
+				width: 56px;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			
+			#shopcar .payment{
+				width: 310px;
+				height: 50px;
+				position: absolute;
+				bottom: 0px;
+				background-color: #fafafa;
+			}
+			#shopcar .payment button{
+				background-color: #ff6700;
+				color: white;
+				width: 80px;
+				font-size: 20px;
+				text-align: center;
+				border-radius: 15px;
+				position: absolute;
+				bottom: 0px;
+				right: 0px;
+			}
+			#shopcar .payment div{
+				color:#ff6700 ;
+				line-height: 50px;
+				font-size: 25px;
+				display: inline-block;
+			}
+			#shopcar .payment div span{
+				
+				font-size: 20px;
+			}
+			#shopcar .floatright{
+				position: fixed;
+				z-index:1;
+			}
+			
+			
+			
+			 #foot{
+				 clear: both;
+				text-align: center;
+				background-color: white;
+				height: 350px;
+				position: relative;
+				bottom: 0px;
+				top: 50px;
+			 }
+			 #foot .footer{
+				 text-align: center;
+				 font-size: 16px;
+			 }
+			 #foot .footer p{
+				 padding-top: 30px;
+			 }
+			 #foot .footer div{
+				 margin-top: 10px;
+				 margin-bottom: 10px;
+			 }
+			 #foot .footer img{
+				 height: 150px;
+			 }
+			 
+		
+			
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="menu">
+
+				<div id="Logo">
+					<img src="小米.png" >
+				</div>
+
+
+
+				<ul id="top_lt">
+					<li><a href="">手机商城</a><b>|</b></li>
+					<li><a href="">电脑商城</a><b>|</b></li>
+					<li><a href="">游戏商城</a><b>|</b></li>
+					<li><a href="">阅读商城</a><b>|</b></li>
+				</ul>
+				<div id="search" >
+					<input type="text" placeholder="请输入你想搜索商品" />
+					<button type="button">搜索</button>
+				</div>
+
+				<div id="top_rt" class="rt">
+					<a href="html/user_login.html">登录</a><b>|</b>
+					<a href="html/user_register.html">注册</a><b>|</b>
+					<a href="">消息通知</a>
+					<span >
+						<a href="">购物车</a>
+						<i>(0)</i>
+					<span>
+
+				</div>
+
+
+
+			</div>
+			<div id="main">
+				<div id="nav">
+					<ul style="list-style: none; ">
+						<li>小米手机 <img src="./static/前进%20(2).png">
+						<div id="popup">
+							这里面填充小米商品
+						</div>
+						</li>
+						<li>红米手机<img src="./static/前进%20(2).png">
+						<div id="popup">
+							这里面填充红米商品
+						</div>
+						</li>
+						<li>小米家具<img src="./static/前进%20(2).png">
+						<div id="popup">
+							这里面填充小米家具商品
+						</div></li>
+						<li>小爱同学<img src="./static/前进%20(2).png">
+						<div id="popup">
+													这里面填充小米小爱同学商品
+												</div></li>
+						<li>MIUI社区<img src="./static/前进%20(2).png">
+						<div id="popup">
+							这里面填充miui
+						</div></li>
+						<li>耳机音箱<img src="./static/前进%20(2).png">
+						<div id="popup">
+													这里面填充小米耳机商品
+												</div></li>
+						<li>电视盒子<img src="./static/前进%20(2).png">
+						<div id="popup">
+													这里面填充小米电视商品
+												</div></li>
+						<li>保护套 贴膜<img src="./static/前进%20(2).png">
+						<div id="popup">
+													这里面填充保护套商品
+												</div></li>
+					</ul>
+					
+					
+				</div>
+
+
+				<div id="player">
+					<div class="sroll">
+
+						<img src="static/1.jpg">
+						<img src="static/2.jpg">
+						<img src="static/3.jpg">
+						<img src="static/4.jpg">
+
+					</div>
+
+				</div>
+
+				<div id="product_hardware">
+					<a class="rt" href="">查看全部<b>&gt;</b></a>
+					<h2>智能硬件</h2>
+					<a class="prHe" href=""><img src="static/product_hardware_01.jpg"></a>
+					<ul id="hardware">
+						<li >
+							<div>免邮费</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/product_hardware_02.jpg"></a>
+							<h4><a href="">小米路由器3</a></h4>
+							<p>四线设计，更安全更稳定</p>
+							<span>&yen;149元</span>
+						</li>
+						<li>
+							<div>免邮费</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/product_hardware_03.jpg"></a>
+							<h4><a href="">电助力折叠自行车</a></h4>
+							<p>力矩传感电助力，折叠便携设计</p>
+							<span>&yen;2999元</span>
+						</li>
+						<li>
+							<div>免邮费</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/product_hardware_04.jpg"></a>
+							<h4><a href="">小米VR眼睛玩具版</a></h4>
+							<p>观看新体验，期待总于意料之外</p>
+							<span>&yen;49元</span>
+						</li>
+
+						<li class="no_banner">
+							<span></span>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/product_hardware_05.jpg"></a>
+							<h4><a href="">九号平衡车</a></h4>
+							<p>年轻人的酷玩具，骑行遥控两种玩法</p>
+							<span>&yen;1999元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/product_hardware_06.jpg"></a>
+							<h4><a href="">米兔智能故事机</a></h4>
+							<p>宝又不好好吃饭，让米兔来哄宝宝吧</p>
+							<span>&yen;199元</span>
+						</li>
+						<li>
+							<div>免邮费</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/product_hardware_07.jpg"></a>
+							<h4><a href="">米家压力IH电饭煲</a></h4>
+							<p>IH电磁环绕加热，让米粒在锅中跳舞</p>
+							<span>&yen;999元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/product_hardware_08.jpg"></a>
+							<h4><a href="">小米笔记本Air12.5英寸</a></h4>
+							<p>更轻更薄，想杂志一样随身携带</p>
+							<span>&yen;3499元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/product_hardware_09.jpg"></a>
+							<h4><a href="">米家&nbsp;LED&nbsp;智能台灯</a></h4>
+							<p>无可视频闪，亮度色温无级调节</p>
+							<span>&yen;169元</span>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="product_hardware">
+					<a href="" class="rt">查看全部<b>&gt;</b></a>
+					<h2>手机</h2>
+					<a href="" class="prHe"><img src="static/手机.png" ></a>
+					<ul id="hardware">
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/小米手机01.png" ></a>
+							<h4>小米10 5G 青春版 </h4>
+							<p>50倍潜望变焦</p>
+							<span>&yen;2099元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/小米手机02.png" ></a>
+							<h4>小米10 5G 青春版 </h4>
+							<p>50倍潜望变焦</p>
+							<span>&yen;2099元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/小米手机03.png" ></a>
+							<h4>小米10 5G 青春版 </h4>
+							<p>50倍潜望变焦</p>
+							<span>&yen;2099元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/小米手机04.png" ></a>
+							<h4>小米10 5G 青春版 </h4>
+							<p>50倍潜望变焦</p>
+							<span>&yen;2099元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/小米手机05.png" ></a>
+							<h4>小米10 5G 青春版 </h4>
+							<p>50倍潜望变焦</p>
+							<span>&yen;2099元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/小米手机06.png" ></a>
+							<h4>小米10 5G 青春版 </h4>
+							<p>50倍潜望变焦</p>
+							<span>&yen;2099元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/小米手机07.png" ></a>
+							<h4>小米10 5G 青春版 </h4>
+							<p>50倍潜望变焦</p>
+							<span>&yen;2099元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/小米手机08.png" ></a>
+							<h4>小米10 5G 青春版 </h4>
+							<p>50倍潜望变焦</p>
+							<span>&yen;2099元</span>
+						</li>
+						
+					</ul>
+					
+				</div>
+				
+				<div id="product_hardware">
+					<a href="" class="rt">查看全部<b>&gt;</b></a>
+					<h2>配件</h2>
+					<div style="float: left; width: 234px;">
+						<a href="" class="prh" ><img src="static/配件首1.jpg" ></a>
+						<a href="" class="prh"><img src="static/配件首.jpg" ></a>
+					</div>
+					<ul id="hardware">
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/配件1.png" ></a>
+							<h4>小米真无线蓝牙耳机 Air 2 </h4>
+							<p>智能真无线，轻松舒适戴</p>
+							<span>&yen;299元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/配件2.png" ></a>
+							<h4>高速无线充套装 </h4>
+							<p>快速无线闪充，Qi充电标准</p>
+							<span>&yen;149元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/配件3.png" ></a>
+							<h4>Redmi充电宝 10000mAh 标准版  </h4>
+							<p>10000mAh大电量 </p>
+							<span>&yen;59元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/配件4.png" ></a>
+							<h4>Redmi充电宝 20000mAh 快充版 </h4>
+							<p>大容量，	可上飞机 </p>
+							<span>&yen;99元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/配件5.png" ></a>
+							<h4>小米插线板 5孔位 </h4>
+							<p>多重安全保护</p>
+							<span>&yen;39元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/配件6.png" ></a>
+							<h4>小米蓝牙耳机AirDots青春版 </h4>
+							<p>快速收纳</p>
+							<span>&yen;199元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/配件7.png" ></a>
+							<h4>小米小爱蓝牙音箱 </h4>
+							<p>一键唤醒</p>
+							<span>&yen;49元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/配件8.png" ></a>
+							<h4>小仙女心愿手链保护壳 </h4>
+							<p>让你仙气满满</p>
+							<span>&yen;199元</span>
+						</li>
+						
+					</ul>
+					
+				</div>
+				
+				<div id="product_hardware">
+					<a href="" class="rt">查看全部<b>&gt;</b></a>
+					<h2>家电</h2>
+					<div style="float: left; width: 234px;">
+						<a href="" class="prh" ><img src="static/家电首1.png" ></a>
+						<a href="" class="prh"><img src="static/家电首.png" ></a>
+					</div>
+					<ul id="hardware">
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/家电1.png" ></a>
+							<h4>Redmi 红米电视 70英寸</h4>
+							<p>70英寸震撼巨屏，4K画质，细腻如真</p>
+							<span>&yen;2999元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/家电2.png" ></a>
+							<h4>小米全面屏电视E32C </h4>
+							<p>全面屏设计，人工智能系统</p>
+							<span>&yen;697元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/家电3.png" ></a>
+							<h4>小米全面屏电视E55A  </h4>
+							<p>全面屏设计，人工智能语音 </p>
+							<span>&yen;1599元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/家电4.png" ></a>
+							<h4>米家空调 </h4>
+							<p>略 </p>
+							<span>&yen;1499元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/家电5.png" ></a>
+							<h4>米家洗衣机 </h4>
+							<p>略</p>
+							<span>&yen;2999元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/家电6.png" ></a>
+							<h4>米家洗衣机 </h4>
+							<p>快速洗衣服</p>
+							<span>&yen;749元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/家电7.png" ></a>
+							<h4>15.6" 四核i7 16G 独显 512G </h4>
+							<p>一键交火，蹦砂巴拉卡</p>
+							<span>&yen;4699元</span>
+						</li>
+						<li>
+							<div>新品</div>
+							<div class="addshopcar" onclick="addCart(this)">加入购物车</div>
+							<a href=""><img src="static/家电8.png" ></a>
+							<h4>智能门锁 </h4>
+							<p>锁的放心</p>
+							<span>&yen;1299元</span>
+						</li>
+						
+					</ul>
+					
+				</div>
+				
+				
+				
+				<div id="shopcar">
+					<div class="floatright">
+						<div class="top">
+							<img src="static/小米.png" >
+							<h2>我的购物车</h2>
+							<p>温馨提示：产品是否购买成功，以最终下单为准哦，请尽快结算</p>
+							
+						</div>
+						<hr color="#ff6700">
+						
+						<div class="cart-goods-list">
+							<div class="list-head clearfix">
+								<div class="col col-check"><i class="iconfont icon-checkbox" id="J_selectAll">&#x221a;</i>选择</div>
+								<!-- <div class="col col-img">&nbsp;</div> -->
+								<div class="col col-name">商品名称</div>
+								<div class="col col-price">单价</div>
+								<div class="col col-num">数量</div>
+								<div class="col col-total">小计</div>
+								<div class="col col-action">操作</div>
+							</div>
+							<div class="list-body" id="J_cartListBody">
+								<ul id="list">
+									<li style="display: none;">
+										<div class="buy">
+											<div onclick="change(event)"><img src="static/noseleted.png" name="没选择" ></div>
+											<!-- <div>&nbsp;</div> -->
+											<div class="buyname">小米8</div>
+											<div class="price">2499</div>
+											<div class="number">1</div>
+											<div class="total">2499</div>
+											<div><img src="static/删除.png" onclick="dele(this)"></div>
+										</div>
+									</li>
+								</ul>
+								
+							</div>
+							<div class=payment>
+								<div>总计:</div>
+								<div class="money">0<span>
+									元
+								</span></div >
+								<button type="button" onclick="pop()">结算</button>
+							</div>
+						</div>
+					</div >
+					
+				</div>
+				
+				
+				
+
+			</div>
+
+
+		</div>
+		<div id="foot">
+			<div class="footer">
+				<p>软件工程182 &nbsp;杨俊艺&nbsp;201815270217 © 2020 Made In China.</p>
+				<br>
+				<div>仿照样式网址<a href="http://www.mi.com/index.html">小米官网</a></div>
+				<div>http://www.mi.com/index.html</div>
+				<div>联系地址:广州航海学院</div>
+				<img src="./static/Wetchat.jpg" >
+				
+			</div>
+		</div>
+		</div>
+		
+		
+	</body>
+</html>
+<script type="text/javascript">
+	
+	function change(event){
+		console.log(event.target.name);
+		if(event.target.name=="没选择"){
+		event.target.src="static/seleted.png";
+		event.target.name="选择";
+		}
+		else{
+			event.target.src="static/noseleted.png"
+			event.target.name="没选择";
+		}
+		
+		}
+		
+		
+		var mycarts=[];
+		var index=0;
+		function addCart(e)
+		{
+		 console.log(e.parentElement.children[5].innerText);
+		 var name=e.parentElement.children[3].innerText;
+		 var price = e.parentElement.children[5].innerText.replace(/元|¥/g,'');
+		 console.log(price);
+		 mycarts.push({name,price});
+		 console.log(mycarts);
+		
+						var tmp=document.getElementsByClassName("buy")[0];
+				   
+				        var li=tmp.cloneNode(true);
+				       li.id=index;
+					   index++;
+				        li.children[1].innerText=name;
+				        li.children[2].innerText=price;
+				        li.children[4].innerText=price;
+				        document.getElementById("list").appendChild(li);
+						var sum=0;
+						for(var i = 0 ; i< mycarts.length; i++)
+						{
+							sum+=parseFloat(mycarts[i].price); 
+							console.log(sum);
+							
+						}
+						document.getElementsByClassName("money")[0].innerText=sum;
+		}
+		
+		function dele(e){
+			console.log(e.parentElement.parentElement.id);
+			
+			mycarts[e.parentElement.parentElement.id].price=0;
+			// mycarts.splice(index,1);
+			e.parentElement.parentElement.remove();
+			var sum=0;
+			for(var i = 0 ; i< mycarts.length; i++)
+			{
+				sum+=parseFloat(mycarts[i].price); 
+				console.log(sum);
+				
+			}
+			document.getElementsByClassName("money")[0].innerText=sum;
+		}
+		
+		function pop(){
+			alert("支付通道开发中！");
+		}
+		
+		
+	
+</script>
+
+	

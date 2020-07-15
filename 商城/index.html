@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>俊俊商城登录界面</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.head {
+				text-align: center;
+				/* background-color: aquamarine; */
+				/* #f8df72 */
+				background-image: linear-gradient( #f7e8aa,#66c18c, #55bb8a,#c6dfc8);
+				color: darkslategrey;
+				height: 100px;
+				width: 100%;
+				line-height: 100px;
+			}
+
+			.wrap {
+				height: 520px;
+				width: 100%;
+				padding-top: 70px;
+				background-image: url(./static/午后.jpg);
+				background-repeat: no-repeat;
+				/* background-repeat:round; */
+				background-position: center;
+				position: relative;
+				/* left: 50%; */
+			}
+			
+			@keyframes loading {
+			            from {
+			                opacity: 0;
+			                
+			            }
+			            to {
+			                opacity: 1;
+			               
+			            }
+			        }
+
+			.login {
+				height: 350px;
+				width: 350px;
+				margin: auto;
+				/* left: 40%; */
+				/* 	position: absolute; */
+				/* position: relative; */
+				/* left: 50%; */
+				text-align: center;
+				/* 	top: 20%;
+				left: 40%; */
+				font-size: 25px;
+				/* position: absolute; */
+				box-shadow: 0 0 9px 5px lightyellow;
+				/* border: 5px solid black; */
+				border-radius: 20px;
+				animation: loading 3s 1 ;
+
+			}
+
+			.loginHead {
+				color: black;
+				font-size: 50px;
+				/* font-family: "楷体"; */
+			}
+
+			.loginInput {
+				margin-top: 25px;
+				margin-left: auto;
+				margin-right: auto;
+				/* border-bottom: 1px solid #ee7700; */
+				position: relative;
+			}
+
+			.loginInput input {
+				height: 32px;
+				width: 250px;
+				text-indent: 32px;
+				line-height: 32px;
+				font-size: 16px;
+				border-radius: 15px;
+			}
+
+			.loginInput img {
+				position: absolute;
+				bottom: 0;
+
+			}
+
+			.loginSumbit input {
+				height: 45px;
+				width: 100px;
+				text-align: center;
+				border-radius: 10px;
+				background-color: beige;
+				color: darkcyan;
+				font-size: 25px;
+			}
+
+			.loginSumbit {
+				margin-top: 30px;
+			}
+
+			.foot {
+				width: 100%;
+				/* position: relative; */
+				/* position: absolute; */
+				height: 280px;
+				text-align: center;
+				background-color: antiquewhite;
+				bottom: -200px;
+				padding-top: 20px;
+			}
+
+			.footer img {
+				margin: 30px;
+				width: 150px;
+				animation: loading 6s 1 ;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<h1>欢迎登录俊俊的商城</h1>
+		</div>
+
+		<div class="wrap">
+			<div class="login">
+				<div class="loginHead">
+					<p>登录</p>
+					<div>
+						<!-- <hr size="3" color="gainsboro"> -->
+					</div>
+				</div>
+
+				<div class="loginInput">
+					<img src="./static/bussiness-man.png">
+					<input type="text" name="" id="input1" value="" placeholder="请输入用户名" />
+				</div>
+
+				<div class="loginInput">
+					<img src="./static/password%20.png">
+					<input type="password" name="" id="input2" value="" placeholder="请输入密码" />
+					<span><img id="inputimg" src="./static/不显示.png" onclick="change()"></span>
+				</div>
+
+				<div class="loginSumbit">
+					<input type="button" name="" id="input3" value="登录" onclick="check()" />
+				</div>
+
+			</div>
+		</div>
+
+		<div class="foot">
+			<div class="footer">
+				<p>软件工程182 &nbsp;杨俊艺&nbsp;201815270217 © 2020 Made In China.</p>
+				<br>
+				<div>联系地址:广州航海学院</div>
+				<div>
+					<img src="./static/Wetchat.jpg">
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function change() {
+			var demo = document.getElementById("input2");
+			var img = document.getElementById("inputimg");
+			if (demo.type == "password") {
+				demo.type = "text";
+				img.src = "./static/显示.png";
+			} else {
+				demo.type = "password";
+				img.src = "./static/不显示.png";
+			}
+		}
+
+		function check() {
+			var a = document.getElementById("input1");
+			var b = document.getElementById("input2");
+			if (a.value == "123" && b.value == "123") {
+				alert("验证成功！");
+				window.location.href = "main.html";
+				console.log("登录成功");
+			} else {
+				alert("用户名或密码错误!");
+			}
+		}
+	</script>
+	
+</html>
