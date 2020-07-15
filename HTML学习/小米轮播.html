@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+
+			.imglist img {
+				width: 1226px;
+				height: 460px;
+				position: absolute;
+				opacity: 0;
+				transition: all 0.5s;
+			}
+
+			.imglist .active {
+				opacity: 1;
+			}
+
+			.container {
+				width: 1226px;
+				height: 460px;
+				margin: 0 auto;
+				position: relative;
+			}
+
+			.pre {
+				width: 40px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				background-color: rgba(0, 0, 0, 0.6);
+				color: #fff;
+
+				position: absolute;
+				font-size: 36px;
+				/* 上下居中 */
+				top: calc(50% - 30px);
+			}
+
+			.next {
+				width: 40px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				background-color: rgba(0, 0, 0, 0.6);
+				color: #fff;
+
+				position: absolute;
+				font-size: 36px;
+				/* 上下居中 */
+				top: calc(50% - 30px);
+				right: 0;
+			}
+
+			.container .circlelist {
+				width: 100%;
+				height: 60px;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				padding: 0 30px;
+			}
+
+			.container .circlelist .circle {
+				width: 10px;
+				height: 10px;
+				border: 2px solid #999;
+				background-color: #666;
+				border-radius: 10px;
+				margin: 0 5px;
+			}
+
+			.container .circlelist .circle.active {
+				background-color: #ccc;
+				border: 2px solid #666;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="imglist">
+				<img src="img/img1.jpg" alt="" class="active">
+				<img src="img/img2.jpg" alt="">
+				<img src="img/img3.jpg" alt="">
+				<img src="img/img4.jpg" alt="">
+				<img src="img/img5.jpg" alt="">
+			</div>
+
+			<div class="btnlist">
+				<div class="pre">
+					< </div> <div class="next"> >
+				</div>
+			</div>
+
+			<div class="circlelist">
+				<div id="c0" class="circle active"></div>
+				<div id="c1" class="circle"></div>
+				<div id="c2" class="circle"></div>
+				<div id="c3" class="circle"></div>
+				<div id="c4" class="circle"></div>
+
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var pre = document.querySelector(".pre");
+		var next = document.querySelector(".next");
+		var imgs = document.querySelectorAll("img");
+		var circlelists = document.querySelectorAll(".circle");
+		var index = 0;
+		next.onclick = function() {
+			index++;
+			if (index >= imgs.length) {
+				index = 0;
+			}
+
+			resnum();
+		}
+
+		pre.onclick = function() {
+			index--
+			if (index < 0) {
+				index = imgs.length - 1
+			}
+
+			resnum();
+		}
+
+		//封装
+		function resnum() {
+			imgs.forEach(function(item, i) {
+				item.classList.remove("active");
+			});
+			imgs[index].classList.add("active");
+
+
+			circlelists.forEach(function(item, i) {
+				item.classList.remove("active");
+			});
+			circlelists[index].classList.add("active");
+
+
+			circlelists.forEach(function(item, i) {
+				item.onclick = function() {
+					//字符串和数组一样，索引值拿东西
+					num = item.id[1];
+					index = num;
+					resnum();
+				}
+			});
+		}
+	</script>
+</html>
