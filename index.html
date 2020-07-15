@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="page/css/index.css" />
+	</head>
+	<body>
+		<div id="container">
+
+			<div id="main">
+
+				<div class="login">
+					<div class="login-head">
+						<img src="static/头像.jpg">
+					</div>
+					<div class="login-input">
+						<input type="text" name="" id="login-name" value="" placeholder="请输入用户名" /><br>
+						<input type="password" id="login-password" placeholder="请输入密码" />
+						<br>
+						<button type="button" id="login-button">登录</button>
+						<button type="button" id="regist">注册</button>
+					</div>
+				</div>
+
+				<div id="register">
+					<span class="close" id="closer">×</span>
+					<h1>注册表单</h1>
+					<form id="registform">
+						<div class="register-input">
+							<div>
+								<b>User Name</b>
+							</div>
+							<input type="text" name="" id="register-username" value="" placeholder="请输入注册用户名" required="required" />
+							<div>
+								<b>Password</b>
+							</div>
+							<input type="password" id="register-p1" name="" placeholder="请输入注册密码" required="required" />
+							<div>
+								<b>Repeat Password</b>
+							</div>
+							<input type="password" id="register-p2" name="" placeholder="请再次确认注册密码" required="required" />
+							<br>
+							<button type="button" id="register-sign">register</button>
+						</div>
+					</form>
+
+				</div>
+
+
+			</div>
+
+		</div>
+	</body>
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+	</script>
+	<script src="jq/jq.js" type="text/javascript" charset="utf-8"></script>
+	<script src="page/js/index.js">
+	</script>
+</html>

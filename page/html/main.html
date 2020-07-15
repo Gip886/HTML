@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 新 Bootstrap4 核心 CSS 文件 -->
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../../boostrap4/css/bootstrap.min.css" />
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+		<script src="../../jq/jq.js" type="text/javascript" charset="utf-8"></script>
+		<!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+		<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+		<script src="../../boostrap4/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="../../boostrap4/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+		<!-- 自己写的main.js -->
+		<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.col-sm-3 {
+				margin-top: 30px;
+				margin-bottom: 20px;
+			}
+
+			.carousel slide {
+				overflow: hidden;
+			}
+
+			.carousel-inner img {
+				height: 320px;
+			}
+			#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8{
+				position: relative;
+				bottom: 0px;
+			}
+	
+		</style>
+	</head>
+	<body>
+
+		<div id="container">
+
+			<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+				<a class="navbar-brand" href="#">首页</a>
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">统计数据</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal2">其他</a>
+					</li>
+				</ul>
+			</nav>
+
+
+			<h1>Hello World!</h1>
+			<p>本次投票可以投无数次，尽心投</p>
+			<p> 在移动设备上，即屏幕宽度小于 576px 时，四个列将会上下堆叠排版。</p>
+			<div class="row">
+				<div class="col-sm-3" style="background-color:lavender;">
+
+					<div id="demo1" class="carousel slide" data-ride="carousel">
+
+						<!-- 指示符 -->
+						<ul class="carousel-indicators">
+							<li data-target="#demo1" data-slide-to="0" class="active"></li>
+							<li data-target="#demo1" data-slide-to="1"></li>
+							<li data-target="#demo1" data-slide-to="2"></li>
+						</ul>
+
+						<!-- 轮播图片 -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="../../static/pic1.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic2.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic3.jpg">
+							</div>
+						</div>
+
+						<!-- 左右切换按钮 -->
+						<a class="carousel-control-prev" href="#demo1" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a class="carousel-control-next" href="#demo1" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+
+
+
+					</div>
+
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">美国大峡谷</h4>
+							<p class="card-text">美国大峡谷（Grand
+								Canyon）是一个举世闻名的自然奇观，科罗拉多河穿流其中，它是联合国教科文组织选为受保护的天然遗产之一。大峡谷位于美国亚利桑那州西北部的凯巴布高原上，是地球上最为壮丽的景色之一。科罗拉多河在科罗拉多高原上共切割出19条主要峡谷，总面积为2724.7平方公里，其中最深、最宽、最长的一个就是大峡谷。它全长446公里，是世界上最长的峡谷之一。峡谷顶宽6至28公里，最深处1800米。谷底水面不足1000米宽，夏季冰雪融水，水深增至18米。山石多为红色。</p>
+							<a href="https://baike.baidu.com/item/%E7%BE%8E%E5%9B%BD%E5%A4%A7%E5%B3%A1%E8%B0%B7/1569520?fr=aladdin" class="card-link">点击了解更多</a>
+							<img src="../../static/数据.png" class="icon">
+							<span id="num1">0</span>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary btn-block" id="b1">投票</button>
+				</div>
+				<div class="col-sm-3" style="background-color:lavenderblush;">
+					<div id="demo2" class="carousel slide" data-ride="carousel">
+
+						<!-- 指示符 -->
+						<ul class="carousel-indicators">
+							<li data-target="#demo2" data-slide-to="0" class="active"></li>
+							<li data-target="#demo2" data-slide-to="1"></li>
+							<li data-target="#demo2" data-slide-to="2"></li>
+						</ul>
+
+						<!-- 轮播图片 -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="../../static/pic4.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic5.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic6.jpg">
+							</div>
+						</div>
+
+						<!-- 左右切换按钮 -->
+						<a class="carousel-control-prev" href="#demo2" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a class="carousel-control-next" href="#demo2" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+
+					</div>
+
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">丽江古城</h4>
+							<p class="card-text">丽江古城位于云南省丽江市古城区，又名大研镇，坐落在丽江坝中部，始建于宋末元初（公元13世纪后期），地处云贵高原，面积为7.279平方公里。丽江古城内的街道依山傍水修建，以红色角砾岩铺就，有四方街、木府、五凤楼、黑龙潭、文昌宫、王丕震纪念馆、雪山书院、王家庄基督教堂、方国瑜故居、白马龙潭寺、顾彼得旧居、净莲寺、普贤寺等景点。丽江为第二批被批准的中国历史文化名城之一，是中国以整座古城申报世界文化遗产获得成功的两座古城之一。</p>
+							<a href="https://baike.baidu.com/item/%E4%B8%BD%E6%B1%9F%E5%8F%A4%E5%9F%8E/304665" class="card-link">点击了解更多</a>
+							<img src="../../static/数据.png" class="icon">
+							<span id="num2">0</span>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary btn-block" id="b2">投票</button>
+				</div>
+				<div class="col-sm-3" style="background-color:lavender;">
+
+					<div id="demo3" class="carousel slide" data-ride="carousel">
+
+						<!-- 指示符 -->
+						<ul class="carousel-indicators">
+							<li data-target="#demo3" data-slide-to="0" class="active"></li>
+							<li data-target="#demo3" data-slide-to="1"></li>
+							<li data-target="#demo3" data-slide-to="2"></li>
+						</ul>
+
+						<!-- 轮播图片 -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="../../static/pic7.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic8.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic9.jpg">
+							</div>
+						</div>
+
+						<!-- 左右切换按钮 -->
+						<a class="carousel-control-prev" href="#demo3" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a class="carousel-control-next" href="#demo3" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+
+					</div>
+
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">玉龙雪山</h4>
+							<p class="card-text">玉龙雪山为云南省丽江市境内雪山群，东界丽（江）鸣（音）公路，西临虎跳峡涧、南起玉湖，北至大具下虎跳峡口，地处东经100°4′2″-100°16′30″、北纬27°3′2″～27°18′57″之间，在丽江北面约15千米处，全长75千米，是北半球最近赤道终年积雪的山脉，隔江西与中甸雪山、东与绵绵山相并列，北自三江口，向南延伸到北纬27°，如扇面向古城展开。全山的13座山峰由南向北纵向排列，主峰扇子陡最高处海拔5596米，终年积雪，雪线高度介于4800～5000米之间。</p>
+							<a href="https://baike.baidu.com/item/%E7%8E%89%E9%BE%99%E9%9B%AA%E5%B1%B1/454679" class="card-link">点击了解更多</a>
+							<img src="../../static/数据.png" class="icon">
+							<span id="num3">0</span>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary btn-block" id="b3">投票</button>
+
+				</div>
+				<div class="col-sm-3" style="background-color:lavenderblush;">
+					<div id="demo4" class="carousel slide" data-ride="carousel">
+
+						<!-- 指示符 -->
+						<ul class="carousel-indicators">
+							<li data-target="#demo4" data-slide-to="0" class="active"></li>
+							<li data-target="#demo4" data-slide-to="1"></li>
+							<li data-target="#demo4" data-slide-to="2"></li>
+						</ul>
+
+						<!-- 轮播图片 -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="../../static/pic10.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic11.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic12.jpg">
+							</div>
+						</div>
+
+						<!-- 左右切换按钮 -->
+						<a class="carousel-control-prev" href="#demo4" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a class="carousel-control-next" href="#demo4" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+
+					</div>
+
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">马尔代夫</h4>
+							<p class="card-text">马尔代夫共和国（The Republic of Maldives，原名马尔代夫群岛
+								），印度洋上的群岛国家。距离印度南部约600公里，距离斯里兰卡西南部约750公里。26组自然环礁、1192个珊瑚岛分布在9万平方公里的海域内，其中约200个岛屿有人居住。 陆地面积298平方公里，是亚洲最小的国家。
+								马尔代夫东北与斯里兰卡相距675公里，北部与印度的米尼科伊岛相距约113公里，马尔代夫南部的赤道海峡和一度半海峡为海上交通要道。2018年8月30日，援马尔代夫中马友谊大桥项目开通仪式隆重举行。</p>
+							<a href="https://baike.baidu.com/item/%E9%A9%AC%E5%B0%94%E4%BB%A3%E5%A4%AB/156155" class="card-link">点击了解更多</a>
+							<img src="../../static/数据.png" class="icon">
+							<span id="num4">0</span>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary btn-block" id="b4">投票</button>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-sm-3" style="background-color:lavender;">
+
+					<div id="demo5" class="carousel slide" data-ride="carousel">
+
+						<!-- 指示符 -->
+						<ul class="carousel-indicators">
+							<li data-target="#demo5" data-slide-to="0" class="active"></li>
+							<li data-target="#demo5" data-slide-to="1"></li>
+							<li data-target="#demo5" data-slide-to="2"></li>
+						</ul>
+
+						<!-- 轮播图片 -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="../../static/pic13.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic14.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic15.jpg">
+							</div>
+						</div>
+
+						<!-- 左右切换按钮 -->
+						<a class="carousel-control-prev" href="#demo5" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a class="carousel-control-next" href="#demo5" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+
+					</div>
+
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">长城</h4>
+							<p class="card-text">长城（The Great
+								Wall），又称万里长城，是中国古代的军事防御工事，是一道高大、坚固而且连绵不断的长垣，用以限隔敌骑的行动。长城不是一道单纯孤立的城墙，而是以城墙为主体，同大量的城、障、亭、标相结合的防御体系。
+								长城修筑的历史可上溯到西周时期，发生在首都镐京（今陕西西安）的著名的典故“烽火戏诸侯”就源于此
+								。春秋战国时期列国争霸，互相防守，长城修筑进入第一个高潮，但此时修筑的长度都比较短。秦灭六国统一天下后，秦始皇连接和修缮战国长城，始有万里长城之称 。明朝是最后一个大修长城的朝代，今天人们所看到的长城多是此时修筑。<br><br></p>
+							<a href="https://baike.baidu.com/item/%E9%95%BF%E5%9F%8E/14251" class="card-link">点击了解更多</a>
+							<img src="../../static/数据.png" class="icon">
+							<span id="num5">0</span>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary btn-block" id="b5">投票</button>
+				</div>
+				<div class="col-sm-3" style="background-color:lavenderblush;">
+					<div id="demo6" class="carousel slide" data-ride="carousel">
+
+						<!-- 指示符 -->
+						<ul class="carousel-indicators">
+							<li data-target="#demo6" data-slide-to="0" class="active"></li>
+							<li data-target="#demo6" data-slide-to="1"></li>
+							<li data-target="#demo6" data-slide-to="2"></li>
+						</ul>
+
+						<!-- 轮播图片 -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="../../static/pic16.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic17.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic18.jpg">
+							</div>
+						</div>
+
+						<!-- 左右切换按钮 -->
+						<a class="carousel-control-prev" href="#demo6" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a class="carousel-control-next" href="#demo6" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+
+					</div>
+
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">巴厘岛</h4>
+							<p class="card-text">巴厘岛，印度尼西亚岛屿，位于爪哇岛东部，面积5620平方公里，岛上热带植被茂密，是举世闻名的旅游岛。
+								巴厘岛上大部分为山地，全岛山脉纵横，地势东高西低，岛上最高峰是阿贡火山海拔3142米，巴厘岛是印度尼西亚唯一信奉印度教的地区，80%的人信奉印度教，当地的语言是巴厘语，也通行印尼语和英语，由于巴厘岛万种风情，景物甚为绮丽，因此它还享有多种别称，如“神明之岛”、“恶魔之岛”、“罗曼斯岛”、“绮丽之岛”、“天堂之岛”、“魔幻之岛”、“花之岛”等，2015年由美国著名旅游杂志《旅游+休闲》一项调查结果把印尼巴厘岛评为世界上最佳的岛屿之一。<br><br></p>
+							<a href="https://baike.baidu.com/item/%E5%B7%B4%E5%8E%98%E5%B2%9B/639601" class="card-link">点击了解更多</a>
+							<img src="../../static/数据.png" class="icon">
+							<span id="num6">0</span>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary btn-block" id="b6">投票</button>
+				</div>
+				<div class="col-sm-3" style="background-color:lavender;">
+
+					<div id="demo7" class="carousel slide" data-ride="carousel">
+
+						<!-- 指示符 -->
+						<ul class="carousel-indicators">
+							<li data-target="#demo7" data-slide-to="0" class="active"></li>
+							<li data-target="#demo7" data-slide-to="1"></li>
+							<li data-target="#demo7" data-slide-to="2"></li>
+						</ul>
+
+						<!-- 轮播图片 -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="../../static/pic19.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic20.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic21.jpg">
+							</div>
+						</div>
+
+						<!-- 左右切换按钮 -->
+						<a class="carousel-control-prev" href="#demo7" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a class="carousel-control-next" href="#demo7" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+
+					</div>
+
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">美国约塞米蒂国家公园</h4>
+							<p class="card-text">约塞米蒂国家公园（Yosemite National Park），位于美国西部加利福尼亚州，内华达山脉西麓，峡谷内有默塞德河流过。占地面积约1100平方英里，是美国国家公园。
+								约塞米蒂国家公园。跨地中海气候与高原山地气候两带，植被类型主要包括亚热带针叶林。1984年被列入联合国教科文组织世界自然遗产名录。
+								2006年5月13日正式与中国安徽黄山风景名胜区结为友好公园。约塞米蒂国家公园的本质是岩石。无所不在的花岗岩仿佛形成了粗糙的灰色帆布，上头画着耀眼的翡翠森林、闪耀的银色河湖。以及形形色色的花草树木，冰雪是这座自然圣殿的创造者，200万年前的冰河冲刷着这片土地。<br><br></p>
+							<a href="https://baike.baidu.com/item/%E7%BA%A6%E5%A1%9E%E7%B1%B3%E8%92%82%E5%9B%BD%E5%AE%B6%E5%85%AC%E5%9B%AD/7432883?fromtitle=%E7%BE%8E%E5%9B%BD%E7%BA%A6%E5%A1%9E%E7%B1%B3%E8%92%82%E5%9B%BD%E5%AE%B6%E5%85%AC%E5%9B%AD&fromid=5274396&fr=aladdin"
+							 class="card-link">点击了解更多</a>
+							<img src="../../static/数据.png" class="icon">
+							<span id="num7">0</span>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary btn-block" id="b7">投票</button>
+
+				</div>
+				<div class="col-sm-3" style="background-color:lavenderblush;">
+					<div id="demo8" class="carousel slide" data-ride="carousel">
+
+						<!-- 指示符 -->
+						<ul class="carousel-indicators">
+							<li data-target="#demo8" data-slide-to="0" class="active"></li>
+							<li data-target="#demo8" data-slide-to="1"></li>
+							<li data-target="#demo8" data-slide-to="2"></li>
+						</ul>
+
+						<!-- 轮播图片 -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="../../static/pic22.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic23.jpg">
+							</div>
+							<div class="carousel-item">
+								<img src="../../static/pic24.jpg">
+							</div>
+						</div>
+
+						<!-- 左右切换按钮 -->
+						<a class="carousel-control-prev" href="#demo8" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a class="carousel-control-next" href="#demo8" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+
+					</div>
+
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">巴黎</h4>
+							<p class="card-text">巴黎（Paris），是法兰西共和国的首都和最大城市，也是法国的政治、经济、文化和商业中心，世界五个国际大都市之一（其余四个分别为纽约、伦敦、东京、香港），并被GaWC评为Alpha+级世界一线城市。
+								巴黎位于法国北部巴黎盆地的中央，横跨塞纳河两岸，城市中心坐标为北纬48°52′、东经2°25′。广义的巴黎有小巴黎和大巴黎之分。小巴黎指大环城公路以内的巴黎城市内，面积105.4平方公里，人口224万；大巴黎包括城区周围的上塞纳省、瓦勒德马恩省、塞纳-圣但尼省、伊夫林省、瓦勒德瓦兹省、塞纳-马恩省和埃松省七个省，共同组成巴黎大区，这片地区在古代就已经被称作“法兰西岛”（ile-de-france），都会区人口约为1100万，占据全国人口的六分之一。</p>
+							<a href="https://baike.baidu.com/item/%E5%B7%B4%E9%BB%8E/858?fr=aladdin" class="card-link">点击了解更多</a>
+							<img src="../../static/数据.png" class="icon">
+							<span id="num8">0</span>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary btn-block" id="b8">投票</button>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="container">
+				<!-- 按钮：用于打开模态框 -->
+				<!--  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    打开模态框
+  </button> -->
+
+				<!-- 模态框 -->
+				<div class="modal fade" id="myModal">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+
+							<!-- 模态框头部 -->
+							<div class="modal-header">
+								<h4 class="modal-title">可视化投票统计</h4>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<!-- 模态框主体 -->
+							<div class="modal-body">
+								<div class="container">
+									<h2>各个景区的投票图示</h2>
+									<p>以下数据为实时统计</p>
+									<p class="text-primary">美国大峡谷</p>
+									<div class="progress">
+										<div class="progress-bar" style="width:30%" id="bar1">0</div>
+									</div>
+									<br>
+									<p class="text-success">丽江古城</p>
+									<div class="progress">
+										<div class="progress-bar bg-success" style="width:40%" id="bar2">0</div>
+									</div>
+									<br>
+									<p class="text-muted">玉龙雪山</p>
+									<div class="progress">
+										<div class="progress-bar bg-info" style="width:50%" id="bar3">0</div>
+									</div>
+									<br>
+									<p class="text-warning">马尔代夫</p>
+									<div class="progress">
+										<div class="progress-bar bg-warning" style="width:60%" id="bar4">0</div>
+									</div>
+									<br>
+									<p class="text-danger">长城</p>
+									<div class="progress">
+										<div class="progress-bar bg-danger" style="width:70%" id="bar5">0</div>
+									</div>
+									<br>
+									<p class="text-secondary">巴厘岛</p>
+									<div class="progress">
+										<div class="progress-bar bg-secondary" style="width:70%" id="bar6">0</div>
+									</div>
+									<br>
+									<p class="text-dark">美国约塞米蒂国家公园</p>
+									<div class="progress">
+										<div class="progress-bar bg-dark" style="width:70%" id="bar7">0</div>
+									</div>
+									<br>
+									<p class="text-muted">巴黎</p>
+									<div class="progress">
+										<div class="progress-bar " style="width:70%" id="bar8">0</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- 模态框底部 -->
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+
+
+			<div class="container">
+
+
+
+
+				<!-- 模态框 -->
+				<div class="modal fade" id="myModal2">
+					<div class="modal-dialog modal-sm">
+						<div class="modal-content">
+
+							<!-- 模态框头部 -->
+							<div class="modal-header">
+								<h4 class="modal-title">关于开发者</h4>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<!-- 模态框主体 -->
+							<div class="modal-body">
+								<p>软件工程182 &nbsp;杨俊艺&nbsp; 201815270217 </p>
+								<h6>© 2020 Made In China.</h6>
+								<div>联系地址:广州航海学院</div>
+								<p>下面是联系方式哦!</p>
+								<img src="../../static/Wetchat.jpg" style="width: 250px;">
+							</div>
+
+							<!-- 模态框底部 -->
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+	</body>
+</html>

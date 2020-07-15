@@ -1,0 +1,142 @@
+			* {
+				margin: 0;
+				padding: 0;
+				
+			}
+
+			#container {
+				/* height: 950px; */
+				/* background-color: #CCFFFF; */
+			}
+
+			#main {
+				height: 950px;
+				background-image: url(../../static/背景.jpg);
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+			}
+
+			#main .login {
+				height: 400px;
+				width: 300px;
+				/* background-color: aqua; */
+				text-align: center;
+				margin: auto;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				animation: loading 3s 1 ;
+			}
+			@keyframes loading {
+			            from {
+			                opacity: 0;
+			                
+			            }
+			            to {
+			                opacity: 1;
+			               
+			            }
+			        }
+
+			#main .login-head {
+				overflow: hidden;
+				height: 80px;
+				width: 80px;
+				border-radius: 50%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			#main .login-head img {
+				height: 80px;
+			}
+
+			#main .login-input input {
+				margin: 20px;
+				height: 30px;
+				width: 200px;
+				border-radius: 15px;
+				text-indent: 10px;
+
+			}
+
+			#main .login-input button {
+				margin: 20px;
+				height: 50px;
+				width: 100px;
+				border-radius: 15px;
+				font-size: 25px;
+				
+			}
+
+			#register {
+				height: 450px;
+				width: 400px;
+				background-color: white;
+				position: relative;
+				left: 50%;
+				top: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				display: none;
+				/* opacity: 70%; */
+				border-radius: 20px;
+				text-align: center;
+				z-index: 2;
+				overflow: hidden;
+			}
+
+			#register h1 {
+				margin-top: 5px;
+			}
+
+			#register .close {
+				position: absolute;
+				right: 10px;
+				top: -10px;
+				color: #000;
+				font-size: 50px;
+				font-weight: bold;
+			}
+
+			#register .close:hover,
+			#register .close:focus {
+				color: red;
+				cursor: pointer;
+			}
+
+			#register .register-input {
+				margin-top: 50px;
+				height: 400px;
+
+			}
+
+			#register .register-input input {
+				height: 30px;
+				width: 200px;
+				border-radius: 15px;
+				margin: 30px;
+				margin-top: 5px;
+				text-indent: 10px;
+			}
+
+			#register .register-input button {
+				width: 100px;
+				height: 50px;
+				margin: 10px;
+				border-radius: 15px;
+				font-size: 20px;
+			}
+
+
+
+
+			.blur {
+				-webkit-filter: blur(5px);
+				/* Chrome, Opera */
+				-moz-filter: blur(5px);
+				-ms-filter: blur(5px);
+				filter: blur(5px);
+			}
