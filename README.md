@@ -6,4 +6,5 @@
 https://gip886.github.io/HTML/HTML学习/放大镜.html  
 https://gip886.github.io/HTML/HTML学习/小米轮播.html  
 https://gip886.github.io/HTML/HTML学习/动态登录界面.html  
-https://gip886.github.io/HTML/HTML学习/login1.html
+https://gip886.github.io/HTML/HTML学习/login1.html  
+https://gip886.github.io/HTML/HTML学习/login2.html
